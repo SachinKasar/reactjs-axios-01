@@ -1,6 +1,9 @@
 # Reactjs Axios
 
 1. Axios - npm install axios --save
+2. json-server - npm i -g json-server
+3. codebase\reactjs-axios\src\app\data>json-server --watch twowheel.json
+4. Get and Post
  
  
 
