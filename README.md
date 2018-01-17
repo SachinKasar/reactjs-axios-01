@@ -11,7 +11,7 @@
 **Steps to follow**
 
 :one: clone git repo with 
-**git clone https://github.com/SachinKasar/reactjs-multi-components.git**
+**git clone https://github.com/SachinKasar/reactjs-axios-01**
 
 :two: install npm packages with command
 **npm install**
