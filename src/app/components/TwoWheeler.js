@@ -29,7 +29,7 @@ export class TwoWheeler extends React.Component {
         {
              name: response.data[response.data.length-1].name,
              totalCount:response.data.length, 
-             manufacturer:response.data[0].manufacturer
+             manufacturer:response.data[response.data.length-1].manufacturer
         }
     )) 
   }
