@@ -61,7 +61,8 @@ export class TwoWheeler extends React.Component {
   }
     
     handleDeleteClick () {
-        axios.delete('http://localhost:3000/twowheels/'+Number(this.state.totalCount-1))
+        let id =  Number(this.state.totalCount-1);
+        axios.delete('http://localhost:3000/twowheels/'+id)
       .then(function (response) {
         console.log(response);
       })
@@ -89,11 +90,12 @@ export class TwoWheeler extends React.Component {
 						</ul>
                         
                          <br/>
-                         <button className='btn btn-primary' onClick={this.handleGetClick}>Get</button>
-                         <button className='btn btn-primary' onClick={this.handlePostClick}>Post</button>
-            <button className='btn btn-primary' onClick={this.handlePutClick}>Put</button> 
-                         <button className='btn btn-primary' onClick={this.handleDeleteClick}>Delete</button>
-                                     
+                        <div className="btn-group btn-group-sm">
+                             <button className='btn btn-primary' style={{margin:'5px'}} onClick={this.handleGetClick}>Get</button>
+                             <button className='btn btn-primary' style={{margin:'5px'}} onClick={this.handlePostClick}>Post</button>
+                             <button className='btn btn-primary' style={{margin:'5px'}}  onClick={this.handlePutClick}>Put</button> 
+                             <button className='btn btn-primary' style={{margin:'5px'}}  onClick={this.handleDeleteClick}>Delete</button>
+                        </div>             
      
 					</div>
 				 
