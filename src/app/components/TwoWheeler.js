@@ -13,45 +13,66 @@ export class TwoWheeler extends React.Component {
             totalCount:0,
             manufacturer:''
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.handleGetClick = this.handleGetClick.bind(this);
         this.handlePostClick = this.handlePostClick.bind(this);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
+        this.handlePutClick = this.handlePutClick.bind(this);
+        
+        
+        
+        
     }
 
-  handleClick () {
-    axios.get('http://localhost:3000/twowheels')
+  handleGetClick () {
+    axios.get('http://localhost:3000/twowheels' )
       .then(response => this.setState(
         {
-             name: response.data[0].name,
+             name: response.data[response.data.length-1].name,
              totalCount:response.data.length, 
              manufacturer:response.data[0].manufacturer
         }
-    ))
+    )) 
   }
 
-    handleClick () {
-    axios.get('http://localhost:3000/twowheels')
-      .then(response => this.setState(
-        {
-             name: response.data[0].name,
-             totalCount:response.data.length, 
-             manufacturer:response.data[0].manufacturer
-        }
-    ))
+  handlePostClick () {
+        axios.post('http://localhost:3000/twowheels', {
+        name: 'Splendor',
+        manufacturer: 'Hero'
+      } )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
+    handlePutClick () {
+        axios.put('http://localhost:3000/twowheels/1', {
+        name: 'Updated Name',
+        manufacturer: 'Updated Manugacturer'
+      } )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
     
-    handlePostClick () {
-    axios.post('http://localhost:3000/twowheels', {
-    name: 'Fred',
-    manufacturer: 'ssss'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-    }
+    handleDeleteClick () {
+        axios.delete('http://localhost:3000/twowheels/'+Number(this.state.totalCount-1))
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
 
+    
+ 
+    
     render() {
         return ( 
              
@@ -62,14 +83,16 @@ export class TwoWheeler extends React.Component {
 								<b>Name :</b> {this.state.name}
 							</li>
 							<li>
-								<b>By :</b> Royal Enfield
+								<b>By :</b> {this.state.manufacturer}
 							</li>
-            {this.state.totalCount} <br/>
-            {this.state.manufacturer}
+                            <li> Total Count : {this.state.totalCount}  </li>
 						</ul>
-            
-             <button className='btn btn-primary' onClick={this.handleClick}>Get</button>
-             <button className='btn btn-primary' onClick={this.handlePostClick}>Post</button>
+                        
+                         <br/>
+                         <button className='btn btn-primary' onClick={this.handleGetClick}>Get</button>
+                         <button className='btn btn-primary' onClick={this.handlePostClick}>Post</button>
+            <button className='btn btn-primary' onClick={this.handlePutClick}>Put</button> 
+                         <button className='btn btn-primary' onClick={this.handleDeleteClick}>Delete</button>
                                      
      
 					</div>
