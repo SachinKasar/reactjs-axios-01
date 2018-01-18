@@ -1,54 +1,20 @@
+
 {
   "twowheels": [
     {
       "id": 1,
-      "name": "Enfield Classic",
-      "manufacturer": "Royal Enfield"
+      "name": "Bajaj Dominar",
+      "manufacturer": "Bajaj"
     },
     {
       "id": 2,
-      "name": "Grand Vitara-2",
-      "manufacturer": "Maruti Suzuki-2"
+      "name": "Royal Enfiled Classic",
+      "manufacturer": "Royal Enfiled "
     },
     {
       "id": 3,
-      "name": "Grand Vitara-3",
-      "manufacturer": "Maruti Suzuki-3"
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 4
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 5
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 6
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 7
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 8
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 9
-    },
-    {
-      "name": "Fred",
-      "manufacturer": "ssss",
-      "id": 10
-    }
+      "name": "TVS Apache RTR",
+      "manufacturer": "TVS"
+    } 
   ]
 }
