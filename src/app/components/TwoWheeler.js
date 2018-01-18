@@ -61,7 +61,7 @@ export class TwoWheeler extends React.Component {
   }
     
     handleDeleteClick () {
-        let id =  Number(this.state.totalCount-1);
+        let id =  Number(this.state.totalCount);
         axios.delete('http://localhost:3000/twowheels/'+id)
       .then(function (response) {
         console.log(response);
